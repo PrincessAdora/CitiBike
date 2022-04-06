@@ -143,7 +143,7 @@ class App extends Component {
             <VictoryBar data={data} x="start_lat" y="end_lat" />
             <VictoryBar data={data} x="start_lat" y="end_lat" />
           </VictoryStack>
-        </VictoryChart>
+        </VictoryChart> 
       </div>
     );
   }
