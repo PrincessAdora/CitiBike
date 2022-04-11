@@ -1,63 +1,44 @@
 import "./styles.css";
-import React, { Component } from "react";
+import { useRef, useEffect } from "react";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+// import { IParallax } from "@react-spring/web";
+// import { animated, useSpring } from "react-spring";
 
-// import data from "./citibike-data";
+const Page = ({ offset, color }) => (
+  <>
+    {/* add reusable layers here as Page component*/}
+    {/*Background Parallax layer -- behind all other layers */}
+    <ParallaxLayer offset={offset} speed={1}>
+      <div className="background">
+        {/* <h3> Add text here for the background if desired! </h3> */}
+      </div>
+    </ParallaxLayer>
 
-import {
-  VictoryBar,
-  VictoryChart,
-  VictoryAxis,
-  VictoryTheme,
-  VictoryStack
-} from "victory";
+    {/*Color Parallax Layer -- over background layer */}
+    <ParallaxLayer offset={offset} speed={2.1}>
+      <div className={`shape ${color}`} />
+    </ParallaxLayer>
 
-import { animated, useSpring, useState } from "react-spring";
+    {/*Text Parallax Layer -- over color and backgronund layers */}
+    <ParallaxLayer offset={offset} speed={1}>
+      <div className="text">
+        <span>Restaurant Reviews</span>
+      </div>
+    </ParallaxLayer>
+  </>
+);
 
-function Text() {
-  const [flip, set] = useState(false);
-  const props = useSpring({
-    to: { opacity: 1 },
-    from: { opacity: 0 },
-    reset: true,
-    reverse: flip,
-    delay: 200,
-    config: config.molasses,
-    onRest: () => set(!flip)
-  });
-
-  return <animated.h1 style={props}>hello</animated.h1>;
+export default function App() {
+  {
+    /* your return here to call what is shown on the page*/
+  }
+  return (
+    <div>
+      <Parallax pages={3} className="container" horizontal>
+        <Page offset={0} color="red" />
+        <Page offset={1} color="purple" />
+        <Page offset={2} color="pink" />
+      </Parallax>
+    </div>
+  );
 }
-
-export default Text;
-
-// class App extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {};
-
-//   }
-
-//   render() {
-//     return (
-//       <div className="App">
-//         {/* <VictoryChart domainPadding={20} theme={VictoryTheme.material}>
-//           <VictoryAxis
-//             tickValues={[1, 2, 3, 4]}
-//             tickFormat={["Rider 1", "Rider 2", "Rider 3", "Rider 4"]}
-//           />
-
-//           <VictoryAxis dependentAxis tickFormat={(x) => `$${x / 1000}k`} />
-
-//           <VictoryStack>
-//             <VictoryBar data={data} x="start_lat" y="end_lat" />
-//             <VictoryBar data={data} x="start_lat" y="end_lat" />
-//             <VictoryBar data={data} x="start_lat" y="end_lat" />
-//             <VictoryBar data={data} x="start_lat" y="end_lat" />
-//           </VictoryStack>
-//         </VictoryChart> */}
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;
