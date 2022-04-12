@@ -16,7 +16,7 @@ const Page = ({ offset, color }) => (
 
     {/*Color Parallax Layer -- over background layer */}
     <ParallaxLayer offset={offset} speed={2.1}>
-      <div className={`shape ${color}`} />
+      <div className={`${color}`} />
     </ParallaxLayer>
 
     {/*Text Parallax Layer -- over color and backgronund layers */}
