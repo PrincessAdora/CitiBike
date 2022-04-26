@@ -1,15 +1,11 @@
 import React from "react";
+import icon from "./golden.jpeg";
 
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <button className="navbar-brand">
-        <img
-          src="http://res.freestockphotos.biz/pictures/16/16551-illustration-of-a-hotdog-pv.png"
-          width="30"
-          height="30"
-          alt=""
-        />
+        <img src={icon} width="60" height="60" alt="" />
       </button>
       <button
         className="navbar-toggler"

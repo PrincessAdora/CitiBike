@@ -1,7 +1,8 @@
-import "./styles.css";
+import styles from "./styles.css";
 import { useRef, useEffect } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Navbar from "./components/NavBar";
+
 // import { IParallax } from "@react-spring/web";
 // import { animated, useSpring } from "react-spring";
 
@@ -10,12 +11,12 @@ const Page = ({ offset, color }) => (
     {/* add reusable layers here as Page component*/}
     {/*Background Parallax layer -- behind all other layers */}
     <ParallaxLayer offset={offset} speed={1}>
-      <div className="background">{<h3></h3>}</div>
+      <div className="background"></div>
     </ParallaxLayer>
 
     {/*Color Parallax Layer -- over background layer */}
     <ParallaxLayer offset={offset} speed={2.1}>
-      <div className={`${color}`} />
+      <div className={`shape ${color}`} />
     </ParallaxLayer>
 
     {/*Text Parallax Layer -- over color and backgronund layers */}
