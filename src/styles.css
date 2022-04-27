@@ -13,6 +13,7 @@ body,
 body {
   font-family: system-ui;
   margin: 0;
+  padding: 0;
 }
 
 *,
@@ -84,11 +85,11 @@ body {
   /* transform: translate3d(200px, 0px, 0px); */
 }
 
-.navbar button {
+/* .navbar button {
   border: none;
   background: rgba(0, 0, 0, 0);
 }
 
 .navbar button:focus {
   outline: 0;
-}
+} */
