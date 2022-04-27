@@ -33,7 +33,7 @@ export default function App() {
 
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <Parallax pages={3} className="container" horizontal>
         <Page offset={0} color="red" />
         <Page offset={1} color="purple" />
